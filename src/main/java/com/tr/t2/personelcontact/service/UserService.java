@@ -2,7 +2,7 @@ package com.tr.t2.personelcontact.service;
 
 import java.util.List;
 
-import com.tr.t2.model.personelcontact.model.User;
+import com.tr.t2.personelcontact.model.User;
 
 public interface UserService
 {

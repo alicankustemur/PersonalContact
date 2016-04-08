@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tr.t2.model.personelcontact.model.User;
 import com.tr.t2.personelcontact.dao.UserRepository;
+import com.tr.t2.personelcontact.model.User;
 
 @Service
 public class UserServiceImpl implements UserService
