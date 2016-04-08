@@ -8,40 +8,50 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tr.t2.personelcontact.model.Person;
 import com.tr.t2.personelcontact.service.PersonService;
 
 @Controller
-@RequestMapping("/")
 public class PersonController
 {
 
 	@Autowired
 	private PersonService service;
 
-	@RequestMapping
-	public ModelAndView helloWorld(ModelMap model)
+	@RequestMapping("/")
+	public String personList(ModelMap model)
 	{
-		List persons = service.getAllPersons();
-		ModelAndView modelAndView = new ModelAndView("index", "person", new Person());
-		modelAndView.addObject("persons", persons);
-		return modelAndView;
+		List<Person> persons = service.getAllPersons();
+
+		model.addAttribute("persons", persons);
+		model.addAttribute("person", new Person());
+		return "index";
 	}
 
-	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
 	public String addUser(@ModelAttribute Person person)
 	{
 		service.addPerson(person);
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
-	public String deleteUser(@ModelAttribute Person person)
-	{
+	@RequestMapping("/deletePerson")
+	public String deleteUser(@RequestParam String id)
 
+	{
+		service.deletePerson(id);
 		return "redirect:/";
+	}
+
+	@RequestMapping("/updatePerson")
+	public String updatePerson(ModelMap model, @RequestParam String id)
+	{
+		List persons = service.getAllPersons();
+		model.addAttribute("persons", persons);
+		model.addAttribute("person", service.getPerson(id));
+		return "index";
 	}
 
 }

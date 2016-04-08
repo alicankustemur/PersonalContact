@@ -46,15 +46,6 @@ public class PersonServiceImpl implements PersonService
 	}
 
 	@Override
-	public void updatePerson(Person person, String id)
-	{
-		Person dbPerson = getPerson(id);
-		dbPerson.setName(person.getName());
-		dbPerson.setSurname(person.getSurname());
-		repository.save(dbPerson);
-	}
-
-	@Override
 	public void deletePerson(String id)
 	{
 		repository.delete(id);

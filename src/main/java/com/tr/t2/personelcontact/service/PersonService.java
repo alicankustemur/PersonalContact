@@ -13,8 +13,6 @@ public interface PersonService
 
 	public List<Person> getAllPersons();
 
-	public void updatePerson(Person person, String id);
-
 	public void deletePerson(String id);
 
 }
