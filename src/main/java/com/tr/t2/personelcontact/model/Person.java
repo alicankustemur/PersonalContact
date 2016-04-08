@@ -3,8 +3,8 @@ package com.tr.t2.personelcontact.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "user")
-public class User
+@Document(collection = "person")
+public class Person
 {
 	@Id
 	private String	id;
@@ -12,11 +12,11 @@ public class User
 	private String	name;
 	private String	surname;
 
-	public User()
+	public Person()
 	{
 	}
 
-	public User(String id, String name, String surname)
+	public Person(String id, String name, String surname)
 	{
 		super();
 		this.id = id;

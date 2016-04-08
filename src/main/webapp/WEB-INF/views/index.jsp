@@ -1,26 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List"%>
-<%@ page import="com.tr.t2.model.User"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 </head>
 <body>
-	<%
-		List<User> users = (List<User>)request.getAttribute("users");
-	%>
+		
+		
+		<form:form id="userForm" method="POST" modelAttribute="user" commandName="user">
+			<table>
+					<th>Kişi Ekle</th>
+				<tr>
+				</tr>
+			</table>
+		</form:form>
 
-	<%
-		for (User user : users)
-		{
-
-			pageContext.setAttribute("name", user.getName());
-	%>
-
-	<div>${name}</div>
-
-	<%
-		}
-	%>
 </body>
 </html>

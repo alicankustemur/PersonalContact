@@ -8,22 +8,22 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tr.t2.personelcontact.service.UserService;
+import com.tr.t2.personelcontact.service.PersonService;
 
 @Controller
-public class UserController
+public class PersonController
 {
 
 	@Autowired
-	private UserService service;
+	private PersonService service;
 
 	@RequestMapping("/")
 	public ModelAndView helloWorld(ModelMap model)
 	{
-		List users = service.getAllUser();
+		List persons = service.getAllPersons();
 
 		ModelAndView modelAndView = new ModelAndView("index");
-		modelAndView.addObject("users", users);
+		modelAndView.addObject("persons", persons);
 		return modelAndView;
 	}
 

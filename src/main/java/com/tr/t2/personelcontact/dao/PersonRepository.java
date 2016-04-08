@@ -3,10 +3,10 @@ package com.tr.t2.personelcontact.dao;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.tr.t2.personelcontact.model.User;
+import com.tr.t2.personelcontact.model.Person;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, String>
+public interface PersonRepository extends MongoRepository<Person, String>
 {
 
 }
