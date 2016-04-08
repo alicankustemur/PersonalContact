@@ -31,14 +31,14 @@ public class PersonController
 	}
 
 	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
-	public String addUser(@ModelAttribute Person person)
+	public String addPerson(@ModelAttribute Person person)
 	{
 		service.addPerson(person);
 		return "redirect:/";
 	}
 
 	@RequestMapping("/deletePerson")
-	public String deleteUser(@RequestParam String id)
+	public String deletePerson(@RequestParam String id)
 	{
 		service.deletePerson(id);
 		return "redirect:/";
