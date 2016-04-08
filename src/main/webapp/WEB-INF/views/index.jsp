@@ -8,13 +8,37 @@
 <body>
 		
 		
-		<form:form id="userForm" method="POST" modelAttribute="user" commandName="user">
+		<form:form id="personForm" method="POST" modelAttribute="person" commandName="person">
 			<table>
 					<th>Kişi Ekle</th>
 				<tr>
+					<td>ID : </td>
+					<td>
+						<form:input path="id"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Ad :</td>
+					<td>
+						<form:input path="name"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Soyad :</td>
+					<td>
+						<form:input path="surname"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button>Kişi Ekle</button>
+					</td>
 				</tr>
 			</table>
 		</form:form>
+
+<jsp:include page="personlist.jsp"/>
+
 
 </body>
 </html>

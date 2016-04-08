@@ -9,7 +9,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.tr.t2.dao")
+@EnableMongoRepositories(basePackages = "com.tr.t2.personelcontact.dao")
 public class MongoConfiguration extends AbstractMongoConfiguration
 {
 

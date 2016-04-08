@@ -54,4 +54,10 @@ public class Person
 		this.surname = surname;
 	}
 
+	@Override
+	public String toString()
+	{
+		return "Person [id=" + id + ", name=" + name + ", surname=" + surname + "]";
+	}
+
 }
