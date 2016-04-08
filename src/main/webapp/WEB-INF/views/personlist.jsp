@@ -1,27 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<table border=1px>
-	<tr class=tags>
-		<th>ID</th>
-		<th>Kullanıcı Adı</th>
-		<th>Yetki</th>
-		<th>Sil</th>
-		<th>Güncelle</th>
-	</tr>
+<div class="col-lg-3">
+	<table class="table table-striped table-hover table-bordered">
+		
+		<thead>
+		<thead><th colspan="5">Kişi Listesi</th></thead>
+			<th>ID</th>
+			<th>Ad</th>
+			<th>Soyad</th>
+			<th>Sil</th>
+			<th>Güncelle</th>
+		</thead>
+		<c:forEach items="${persons}" var="person" varStatus="i">
+			<tr id="${person.id}">
+			<td>${person.id}</td>
+			<td><c:out value="${person.name}"></c:out></td>
+			<td><c:out value="${person.surname}"></c:out></td>
+			<td>
+				<form:form method="POST" action="deleteUser">
+					<button type="submit" class="btn btn-danger" >Sil</button>
+				</form:form>
+			</td>
+			</tr>
+		</c:forEach>
 
-	<c:forEach items="${persons}" var="person" varStatus="i">
-		<c:choose>
-			<c:when test="${i.count % 2 == 0 }">
-				<c:out value="<tr class=black>" escapeXml="false"></c:out>
-			</c:when>
-			<c:otherwise>
-				<c:out value="<tr class=white>" escapeXml="false"></c:out>
-			</c:otherwise>
-		</c:choose>
-		<td>${person.id}</td>
-		<td><c:out value="${person.name}"></c:out></td>
-		</tr>
-	</c:forEach>
-
-</table>
+	</table>
+</div>

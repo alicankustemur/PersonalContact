@@ -30,11 +30,17 @@ public class PersonController
 		return modelAndView;
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	public String addUser(@ModelAttribute Person person)
 	{
-		System.out.println(person.toString());
 		service.addPerson(person);
+		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+	public String deleteUser(@ModelAttribute Person person)
+	{
+
 		return "redirect:/";
 	}
 
