@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.tr.t2.personelcontact.model.Person;
 import com.tr.t2.personelcontact.service.PersonService;
@@ -21,13 +21,13 @@ public class PersonController
 	private PersonService service;
 
 	@RequestMapping("/")
-	public String personList(ModelMap model)
+	public ModelAndView index(ModelAndView modelAndView)
 	{
 		List<Person> persons = service.getAllPersons();
-
-		model.addAttribute("persons", persons);
-		model.addAttribute("person", new Person());
-		return "index";
+		modelAndView.addObject("persons", persons);
+		modelAndView.addObject("person", new Person());
+		modelAndView.setViewName("index");
+		return modelAndView;
 	}
 
 	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
@@ -39,19 +39,19 @@ public class PersonController
 
 	@RequestMapping("/deletePerson")
 	public String deleteUser(@RequestParam String id)
-
 	{
 		service.deletePerson(id);
 		return "redirect:/";
 	}
 
 	@RequestMapping("/updatePerson")
-	public String updatePerson(ModelMap model, @RequestParam String id)
+	public ModelAndView updatePerson(ModelAndView modelAndView, @RequestParam String id)
 	{
-		List persons = service.getAllPersons();
-		model.addAttribute("persons", persons);
-		model.addAttribute("person", service.getPerson(id));
-		return "index";
+		List<Person> persons = service.getAllPersons();
+		modelAndView.addObject("persons", persons);
+		modelAndView.addObject("person", service.getPerson(id));
+		modelAndView.setViewName("index");
+		return modelAndView;
 	}
 
 }
