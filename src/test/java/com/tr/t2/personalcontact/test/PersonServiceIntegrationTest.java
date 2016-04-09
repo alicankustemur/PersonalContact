@@ -1,4 +1,4 @@
-package com.tr.t2.personalcontact;
+package com.tr.t2.personalcontact.test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;

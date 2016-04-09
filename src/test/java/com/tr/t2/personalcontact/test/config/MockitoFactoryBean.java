@@ -1,4 +1,4 @@
-package com.tr.t2.personalcontact.config;
+package com.tr.t2.personalcontact.test.config;
 
 import org.mockito.Mockito;
 import org.springframework.beans.factory.FactoryBean;

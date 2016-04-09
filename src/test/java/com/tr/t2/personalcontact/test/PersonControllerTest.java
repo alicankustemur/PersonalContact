@@ -1,4 +1,4 @@
-package com.tr.t2.personalcontact;
+package com.tr.t2.personalcontact.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
