@@ -1,4 +1,4 @@
-package com.tr.t2.personelcontact.controller;
+package com.tr.t2.personalcontact.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tr.t2.personelcontact.model.Person;
-import com.tr.t2.personelcontact.service.PersonService;
+import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.service.PersonService;
 
 @Controller
 public class PersonController
@@ -30,21 +30,21 @@ public class PersonController
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
+	@RequestMapping(value = "addPerson", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute Person person)
 	{
 		service.addPerson(person);
 		return "redirect:/";
 	}
 
-	@RequestMapping("/deletePerson")
+	@RequestMapping("deletePerson")
 	public String deletePerson(@RequestParam String id)
 	{
 		service.deletePerson(id);
 		return "redirect:/";
 	}
 
-	@RequestMapping("/updatePerson")
+	@RequestMapping("updatePerson")
 	public ModelAndView updatePerson(ModelAndView modelAndView, @RequestParam String id)
 	{
 		List<Person> persons = service.getAllPersons();

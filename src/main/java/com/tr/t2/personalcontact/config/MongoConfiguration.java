@@ -1,4 +1,4 @@
-package com.tr.t2.personelcontact.config;
+package com.tr.t2.personalcontact.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
@@ -9,7 +9,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.tr.t2.personelcontact.dao")
+@EnableMongoRepositories(basePackages = "com.tr.t2.personalcontact.dao")
 public class MongoConfiguration extends AbstractMongoConfiguration
 {
 

@@ -1,4 +1,4 @@
-package com.tr.t2.personelcontact;
+package com.tr.t2.personalcontact;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
@@ -33,7 +33,7 @@ public class PersonControllerTest
 	}
 
 	@Test
-	public void test_page_load() throws Exception
+	public void testPageLoad() throws Exception
 	{
 		mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"))
 				.andExpect(forwardedUrl("/WEB-INF/views/index.jsp"));

@@ -1,4 +1,4 @@
-package com.tr.t2.personelcontact;
+package com.tr.t2.personalcontact;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -18,9 +18,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.tr.t2.personelcontact.dao.PersonRepository;
-import com.tr.t2.personelcontact.model.Person;
-import com.tr.t2.personelcontact.service.PersonServiceImpl;
+import com.tr.t2.personalcontact.dao.PersonRepository;
+import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.service.PersonServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration

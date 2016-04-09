@@ -4,90 +4,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Personel Contact</title>
+<title>Personal Contact</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
-
-
+	
+	
+<br /><br />
 	<div class="col-lg-3">
 
-		<form:form id="personForm" method="POST" action="addPerson" modelAttribute="person" commandName="person"
+		<form:form id="form" method="POST" action="addPerson" modelAttribute="person" commandName="person"
 			cssClass="form-horizontal">
-
-			<table class="table">
-				<thead>
-					<th>Kişi <c:if test="${!empty person.name}">
+			
+			<div class="form-group">
+				<label for="" class="col-sm-12 control-label" style="text-align:center">
+					 Kişi <c:if test="${!empty person.name}">
 					 	Güncelle
 					  </c:if> <c:if test="${empty person.name}">
 					 	Ekle
 					  </c:if>
-					</th>
-				</thead>
-				
-				<c:if test="${empty person.name}">
-					<tr>
-						<td>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">ID</label>
-								<div class="col-sm-10">
-									<form:input path="id" cssClass="form-control" placeholder="ID giriniz." />
-								</div>
-							</div>
-						</td>
-					</tr>
-				</c:if>
-				<c:if test="${!empty person.name }"> 
-					<form:hidden path="id" />
-				</c:if>
-				<tr>
-					<td>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">Ad</label>
-							<div class="col-sm-10">
-								<form:input path="name" cssClass="form-control" placeholder="Ad giriniz." />
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="form-group">
-							<label class="col-sm-2 control-label">Soyad</label>
-							<div class="col-sm-10">
-								<form:input path="surname" cssClass="form-control" placeholder="Soyad giriniz." />
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-default pull-right">Kaydet</button>
-							</div>
-						</div>
-					</td>
-					<c:if test="${!empty person.name}">
-					<td>
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<a href="/personelcontact" class="btn btn-warning">İptal Et</a>
-							</div>
-						</div>
-					</td>
-					</c:if>
-				</tr>
-			</table>
+				</label>
+			</div>
+			<c:if test="${empty person.name}">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">ID</label>
+					<div class="col-sm-10">
+						<form:input path="id" cssClass="form-control" placeholder="ID giriniz." />
+					</div>
+				</div>
+			</c:if>
+			<c:if test="${!empty person.name }">
+				<form:hidden path="id" />
+			</c:if>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Ad</label>
+				<div class="col-sm-10">
+					<form:input path="name" cssClass="form-control" placeholder="Ad giriniz." />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Soyad</label>
+				<div class="col-sm-10">
+					<form:input path="surname" cssClass="form-control" placeholder="Soyad giriniz." />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default pull-right">Kaydet</button>
+				</div>
+			</div>
 
 		</form:form>
-	</div>
-
+</div>
 	<jsp:include page="persons.jsp"></jsp:include>
-
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="static/scripts.js"></script>

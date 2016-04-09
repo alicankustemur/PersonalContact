@@ -1,12 +1,12 @@
-package com.tr.t2.personelcontact.service;
+package com.tr.t2.personalcontact.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tr.t2.personelcontact.dao.PersonRepository;
-import com.tr.t2.personelcontact.model.Person;
+import com.tr.t2.personalcontact.dao.PersonRepository;
+import com.tr.t2.personalcontact.model.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService
