@@ -34,15 +34,13 @@ public class PersonServiceImpl implements PersonService
 	@Override
 	public Person getPerson(String id)
 	{
-		Person person = repository.findOne(id);
-		return person;
+		return repository.findOne(id);
 	}
 
 	@Override
 	public List<Person> getAllPersons()
 	{
-		List<Person> persons = repository.findAll();
-		return persons;
+		return repository.findAll();
 	}
 
 	@Override
