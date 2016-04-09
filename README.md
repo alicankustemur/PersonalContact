@@ -19,7 +19,7 @@ mvn package
 ```
 
 Copy **personelcontact-1.0.0-BUILD-SNAPSHOT.war** file in target folder to tomcat/wepapps folder.
-Run tomcat and go to [download page](http://www.primefaces.org/downloads) for deploying.**(if server port adress 8080 )**
+Run tomcat and go to [http://localhost:8080/personelcontact-1.0.0-BUILD-SNAPSHOT.war](http://localhost:8080/personelcontact-1.0.0-BUILD-SNAPSHOT.war) for deploying.**(if server port adress 8080 )**
 
 Call these commands for running test classes.
 
