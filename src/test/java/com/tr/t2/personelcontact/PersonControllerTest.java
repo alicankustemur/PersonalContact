@@ -2,6 +2,7 @@ package com.tr.t2.personelcontact;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -36,7 +37,7 @@ public class PersonControllerTest
 	public void test_page_load() throws Exception
 	{
 		mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"))
-				.andExpect(forwardedUrl("/WEB-INF/views/index.jsp"));
+				.andExpect(forwardedUrl("/WEB-INF/views/index.jsp")).andExpect(model().attributeExists("persons"));
 	}
 
 }
