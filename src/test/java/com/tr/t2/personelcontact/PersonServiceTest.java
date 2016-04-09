@@ -42,6 +42,15 @@ public class PersonServiceTest
 
 	@Rollback(true)
 	@Test
+	public void testAddPerson() throws Exception
+	{
+		Person person = new Person("1", "Ali Can", "Kuştemur");
+		service.addPerson(person);
+		assertThat(service.getPerson(person.getId()), is(notNullValue()));
+	}
+
+	@Rollback(true)
+	@Test
 	public void testGetPerson() throws Exception
 	{
 		Person person = new Person("1", "Ali Can", "Kuştemur");
@@ -49,15 +58,6 @@ public class PersonServiceTest
 		assertEquals(person.getId(), service.getPerson(person.getId()).getId());
 		assertEquals(person.getName(), service.getPerson(person.getId()).getName());
 		assertEquals(person.getSurname(), service.getPerson(person.getId()).getSurname());
-	}
-
-	@Rollback(true)
-	@Test
-	public void testAddPerson() throws Exception
-	{
-		Person person = new Person("1", "Ali Can", "Kuştemur");
-		service.addPerson(person);
-		assertThat(service.getPerson(person.getId()), is(notNullValue()));
 	}
 
 	@Rollback(true)
