@@ -8,35 +8,43 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="resources/style.css" />
+<link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
-	
-	
+
+
 	<div class="col-lg-3">
-	
+
 		<form:form id="personForm" method="POST" action="addPerson" modelAttribute="person" commandName="person"
 			cssClass="form-horizontal">
 
 			<table class="table">
-			<thead>
-				<th>
-					
-					Kişi 
-					  <c:if test="${!empty person.name}">
+				<thead>
+					<th>Kişi <c:if test="${!empty person.name}">
 					 	Güncelle
-					  </c:if>
-					  <c:if test="${empty person.name}">
+					  </c:if> <c:if test="${empty person.name}">
 					 	Ekle
 					  </c:if>
-				</th>
-			</thead>
+					</th>
+				</thead>
+				<c:if test="${empty person.name}">
+					<tr>
+						<td>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">ID</label>
+								<div class="col-sm-10">
+									<form:input path="id" cssClass="form-control" placeholder="ID giriniz." />
+								</div>
+							</div>
+						</td>
+					</tr>
+				</c:if>
 				<tr>
 					<td>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">ID</label>
+							<label class="col-sm-2 control-label">Ad</label>
 							<div class="col-sm-10">
-								<form:input path="id" cssClass="form-control" placeholder="ID giriniz." />
+								<form:input path="name" cssClass="form-control" placeholder="Ad giriniz." />
 							</div>
 						</div>
 					</td>
@@ -44,17 +52,7 @@
 				<tr>
 					<td>
 						<div class="form-group">
-							<label  class="col-sm-2 control-label">Ad</label>
-							<div class="col-sm-10">
-								<form:input path="name" cssClass="form-control"  placeholder="Ad giriniz." />
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="form-group">
-							<label  class="col-sm-2 control-label">Soyad</label>
+							<label class="col-sm-2 control-label">Soyad</label>
 							<div class="col-sm-10">
 								<form:input path="surname" cssClass="form-control" placeholder="Soyad giriniz." />
 							</div>
@@ -69,17 +67,26 @@
 							</div>
 						</div>
 					</td>
+					<c:if test="${!empty person.name}">
+					<td>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<a href="/personelcontact" class="btn btn-warning">İptal Et</a>
+							</div>
+						</div>
+					</td>
+					</c:if>
 				</tr>
 			</table>
 
 		</form:form>
 	</div>
-	
+
 	<jsp:include page="persons.jsp"></jsp:include>
-	
+
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="resources/jquery.js"></script>
+	<script src="static/scripts.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>

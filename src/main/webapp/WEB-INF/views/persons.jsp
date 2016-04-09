@@ -20,7 +20,7 @@
 				<td class="id">${person.id}</td>
 				<td><c:out value="${person.name}"></c:out></td>
 				<td><c:out value="${person.surname}"></c:out></td>
-				<td><a href="<c:url value='/deletePerson?id=${person.id}' />" class="btn btn-danger">Sil</a></td>
+				<td><a href="" class="btn btn-danger" onClick="deleteUser('${person.id}','${person.name}');">Sil</a></td>
 				<td><a href="<c:url value='/updatePerson?id=${person.id}' />" class="btn btn-success">Güncelle</a></td>
 			</tr>
 		</c:forEach>

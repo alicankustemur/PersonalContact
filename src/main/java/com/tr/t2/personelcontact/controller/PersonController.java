@@ -14,14 +14,13 @@ import com.tr.t2.personelcontact.model.Person;
 import com.tr.t2.personelcontact.service.PersonService;
 
 @Controller
-@RequestMapping("/")
 public class PersonController
 {
 
 	@Autowired
 	private PersonService service;
 
-	@RequestMapping
+	@RequestMapping("/")
 	public ModelAndView index(ModelAndView modelAndView)
 	{
 		List<Person> persons = service.getAllPersons();
