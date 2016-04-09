@@ -1,1 +1,5 @@
 /target/
+.git
+.project
+.springBeans
+.settings

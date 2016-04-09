@@ -7,7 +7,7 @@ import com.tr.t2.personalcontact.model.Person;
 public interface PersonService
 {
 
-	public void addPerson(Person person);
+	public Person addPerson(Person person);
 
 	public Person getPerson(String id);
 
