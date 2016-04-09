@@ -27,6 +27,7 @@
 					  </c:if>
 					</th>
 				</thead>
+				
 				<c:if test="${empty person.name}">
 					<tr>
 						<td>
@@ -38,6 +39,9 @@
 							</div>
 						</td>
 					</tr>
+				</c:if>
+				<c:if test="${!empty person.name }"> 
+					<form:hidden path="id" />
 				</c:if>
 				<tr>
 					<td>
