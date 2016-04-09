@@ -1,4 +1,1 @@
-.git
-.project
-.springBeans
-.settings
+$ cat .gitignore
