@@ -5,12 +5,12 @@
  The goal of the project ; save person information to using basic database operations.
  
 ## Requirements
- ***
+
 ### Build
  - Maven
  - JDK 7 or later.
  
- ### Run
+### Run
 
  These ones must be installed on your os for run.
  - Maven 
@@ -19,7 +19,6 @@
  - JRE 7 or later.
  
 ## Installation
-***
 
 ### Build
 Run command-line in the project path and call it on command-line.
