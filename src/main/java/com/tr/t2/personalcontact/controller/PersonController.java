@@ -14,6 +14,7 @@ import com.tr.t2.personalcontact.model.Person;
 import com.tr.t2.personalcontact.service.PersonService;
 
 @Controller
+
 public class PersonController
 {
 
