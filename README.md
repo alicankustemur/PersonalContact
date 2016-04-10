@@ -1,4 +1,4 @@
-# Personel Contact
+# Personal Contact
 
  This is a simple **Spring MVC** and **MongoDB** project.
  
