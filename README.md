@@ -4,6 +4,10 @@
  
  The goal of the project ; save person information to using basic database operations.
  
+ ![PersonalContact Screenshoot](http://alicankustemur.github.io/images/PersonalContactScreenshoot-1.jpg)
+ 
+ ![PersonalContact Screenshoot](http://alicankustemur.github.io/images/PersonalContactScreenshoot-2.jpg)
+ 
 ## Requirements
 
 ### Build
@@ -27,14 +31,20 @@ mvn package
 ```
 
 Copy personelcontact-1.0.0-BUILD-SNAPSHOT.war file in target folder to tomcat/wepapps folder.
-Run tomcat and go to [localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT.] for deploying.(if server port adress 8080 )
+Run tomcat and go to [localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT.] (localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT.) for deploying.(if server port adress 8080 )
 
-Call this command for running test classes.
+Call these commands for running test classes.
 
 ```sh
 mvn test
 ```
+or one
+```sh
+mvn -Dtest=PersonControllerTest  test
+mvn -Dtest=PersonServiceIntegrationTest  test
+mvn -Dtest=PersonControllerWithServiceTest  test
+```
 
-[localhost:8080/personelcontact-1.0.0-BUILD-SNAPSHOT.]: <localhost:8080/personelcontact-1.0.0-BUILD-SNAPSHOT.>
+
 
 
