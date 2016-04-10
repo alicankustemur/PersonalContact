@@ -1,6 +1,7 @@
 package com.tr.t2.personalcontact.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -8,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -37,6 +39,27 @@ public class PersonControllerTest
 	{
 		mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"))
 				.andExpect(forwardedUrl("/WEB-INF/views/index.jsp"));
+	}
+
+	@Test
+	public void TestAddPersonRedirectWhenClickSaveButton() throws Exception
+	{
+		mockMvc.perform(post("/addPerson")).andExpect(status().is3xxRedirection());
+
+	}
+
+	@Test
+	public void TestDeletePersonRedirectWhenClickDeleteButton() throws Exception
+	{
+		mockMvc.perform(get("/deletePerson?id=" + Matchers.anyString())).andExpect(status().is3xxRedirection());
+
+	}
+
+	@Test
+	public void TestUpdatePersonRedirectWhenClickSaveButton() throws Exception
+	{
+		mockMvc.perform(get("/updatePerson?id=" + Matchers.anyString())).andExpect(status().isOk());
+
 	}
 
 }

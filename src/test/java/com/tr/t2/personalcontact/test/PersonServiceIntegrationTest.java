@@ -16,14 +16,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.tr.t2.personalcontact.dao.PersonRepository;
 import com.tr.t2.personalcontact.model.Person;
 import com.tr.t2.personalcontact.service.PersonServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
 @ContextConfiguration({("classpath:test-config.xml")})
 public class PersonServiceIntegrationTest
 {
