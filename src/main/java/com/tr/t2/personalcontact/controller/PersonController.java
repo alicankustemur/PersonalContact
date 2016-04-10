@@ -34,7 +34,9 @@ public class PersonController
 	@RequestMapping(value = "addPerson", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute Person person)
 	{
+
 		service.addPerson(person);
+
 		return "redirect:/";
 	}
 
@@ -48,6 +50,7 @@ public class PersonController
 	@RequestMapping("updatePerson")
 	public ModelAndView updatePerson(ModelAndView modelAndView, @RequestParam String id)
 	{
+
 		List<Person> persons = service.getAllPersons();
 		modelAndView.addObject("persons", persons);
 		modelAndView.addObject("person", service.getPerson(id));

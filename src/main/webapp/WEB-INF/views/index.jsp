@@ -52,8 +52,11 @@
 					<form:input path="surname" cssClass="form-control" placeholder="Soyad giriniz." />
 				</div>
 			</div>
-			<div class="col-sm-offset-2 col-sm-10 ">
-				<button type="submit" class="btn btn-alert">Kaydet</button>
+			<div class="form-group">
+				<div class="col-sm-8 col-sm-push-3 error-alert"></div>
+				<div class=" col-sm-5 pull-right">
+					<button type="button" class="btn btn-default submit-button">Kaydet</button>
+				</div>
 			</div>
 	</div>
 
@@ -62,7 +65,7 @@
 	<jsp:include page="persons.jsp"></jsp:include>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="static/scripts.js"></script>
+	<script src="resources/scripts.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
