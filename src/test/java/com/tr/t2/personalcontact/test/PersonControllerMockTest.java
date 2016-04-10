@@ -57,7 +57,7 @@ public class PersonControllerMockTest
 	}
 
 	@Test
-	public void TestgetPersonWhenClickUpdateButton() throws Exception
+	public void testGetPersonWhenClickUpdateButton() throws Exception
 	{
 		Person person = getSimplePerson();
 		Mockito.when(service.getPerson(Matchers.anyString())).thenReturn(person);
