@@ -9,7 +9,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -51,14 +50,13 @@ public class PersonControllerTest
 	@Test
 	public void TestDeletePersonRedirectWhenClickDeleteButton() throws Exception
 	{
-		mockMvc.perform(get("/deletePerson?id=" + Matchers.anyString())).andExpect(status().is3xxRedirection());
-
+		mockMvc.perform(get("/deletePerson?id=0")).andExpect(status().is3xxRedirection());
 	}
 
 	@Test
 	public void TestUpdatePersonRedirectWhenClickSaveButton() throws Exception
 	{
-		mockMvc.perform(get("/updatePerson?id=" + Matchers.anyString())).andExpect(status().isOk());
+		mockMvc.perform(get("/updatePerson?id=0")).andExpect(status().isOk());
 
 	}
 
