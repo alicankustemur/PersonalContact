@@ -31,7 +31,7 @@ mvn package
 ```
 
 Copy **personalcontact-1.0.0-BUILD-SNAPSHOT.war** file in **Project Path/target** folder to **Tomcat Path/wepapps** folder.
-Run tomcat and go to [http://localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT.] (http://localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT.) for deploying.**(if server port adress 8080 )**
+Run tomcat and go to [http://localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT/] (http://localhost:8080/personalcontact-1.0.0-BUILD-SNAPSHOT/) for deploying.**(if server port adress 8080 )**
 
 Call these commands for running test classes.
 
