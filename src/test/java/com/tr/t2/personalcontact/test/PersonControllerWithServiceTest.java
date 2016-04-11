@@ -22,7 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.tr.t2.personalcontact.controller.PersonController;
-import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.domain.Person;
 import com.tr.t2.personalcontact.service.PersonService;
 
 public class PersonControllerWithServiceTest

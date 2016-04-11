@@ -18,7 +18,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.tr.t2.personalcontact.dao.PersonRepository;
-import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.domain.Person;
 import com.tr.t2.personalcontact.service.PersonServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -1,4 +1,4 @@
-package com.tr.t2.personalcontact.model;
+package com.tr.t2.personalcontact.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "person")
 public class Person
 {
+
 	@Id
 	private String	id;
 

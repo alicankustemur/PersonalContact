@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.domain.Person;
 import com.tr.t2.personalcontact.service.PersonService;
 
 @Controller
-
 public class PersonController
 {
 
@@ -28,6 +27,7 @@ public class PersonController
 		modelAndView.addObject("persons", persons);
 		modelAndView.addObject("person", new Person());
 		modelAndView.setViewName("index");
+
 		return modelAndView;
 	}
 
@@ -55,6 +55,7 @@ public class PersonController
 		modelAndView.addObject("persons", persons);
 		modelAndView.addObject("person", service.getPerson(id));
 		modelAndView.setViewName("index");
+
 		return modelAndView;
 	}
 

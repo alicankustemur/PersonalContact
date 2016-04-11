@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tr.t2.personalcontact.dao.PersonRepository;
-import com.tr.t2.personalcontact.model.Person;
+import com.tr.t2.personalcontact.domain.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService
